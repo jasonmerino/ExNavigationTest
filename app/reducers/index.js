@@ -2,10 +2,11 @@
 import { createNavigationEnabledStore, NavigationReducer } from '@exponent/ex-navigation';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
+import promiseMiddleware from 'redux-promise';
 
 import app from './appReducer';
 
-const createStoreWithMiddleware = applyMiddleware(createLogger())(createStore);
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, createLogger())(createStore);
 
 const createStoreWithNavigation = createNavigationEnabledStore({
   createStore: createStoreWithMiddleware,

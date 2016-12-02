@@ -3,6 +3,7 @@ import Main from '../components/screens/Main';
 import Category from '../components/screens/Category';
 import ProductDrops from '../components/screens/ProductDrops';
 import ProductDropFilters from '../components/screens/ProductDropFilters';
+import Product from '../components/screens/Product';
 import Shop from '../components/screens/Shop';
 import Experts from '../components/screens/Experts';
 import Cart from '../components/screens/Cart';
@@ -14,6 +15,7 @@ export default router = createRouter(() => ({
   category: () => Category,
   productDrops: () => ProductDrops,
   productDropFilters: () => ProductDropFilters,
+  product: () => Product,
   experts: () => Experts,
   cart: () => Cart,
   more: () => More,

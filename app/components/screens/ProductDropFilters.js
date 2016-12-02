@@ -10,6 +10,7 @@ import Screen from '../partials/Screen';
 import Link from '../partials/Link';
 import NavigationBarButton from '../partials/NavigationBarButton';
 import { navigationBarStylesLight } from '../../styles/navigationBarStyles';
+import { pop } from '../../actions/navigationActions';
 
 class ProductDropFiltersScreen extends Component {
 
@@ -17,9 +18,12 @@ class ProductDropFiltersScreen extends Component {
     navigationBar: {
       ...navigationBarStylesLight,
       title: 'Filter Results',
+      renderRight() {
+        return <NavigationBarButton onPress={pop}>Done</NavigationBarButton>;
+      },
       renderLeft() {
-        return <NavigationBarButton>Close</NavigationBarButton>;
-      }
+        return <NavigationBarButton>Clear</NavigationBarButton>;
+      },
     }
   }
 

@@ -26,7 +26,24 @@ class CategoryScreen extends Component {
     return (
       <Screen>
         <Text>Category</Text>
-        <Link onPress={() => this.props.navigator.push(router.getRoute('productDrops'))}>Product Drops</Link>
+        <Link
+          onPress={() => {
+            this.props.navigator.push(router.getRoute('productDrops', {
+              showNavigationBarSearch: false,
+            }));
+          }}
+        >
+          Browse Product Drops
+        </Link>
+        <Link
+          onPress={() => {
+            this.props.navigator.push(router.getRoute('productDrops', {
+              keyword: 'keyword searched for' ,
+            }));
+          }}
+        >
+          Search Product Drops
+        </Link>
       </Screen>
     );
   }

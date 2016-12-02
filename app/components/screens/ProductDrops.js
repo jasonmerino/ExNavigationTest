@@ -14,9 +14,12 @@ class ProductDropsScreen extends Component {
 
   static route = {
     navigationBar: {
-      renderTitle() {
+      renderTitle({ params }) {
         return (
-          <NavigationBarSearch />
+          <NavigationBarSearch
+            showNavigationBarSearch={params.showNavigationBarSearch}
+            keyword={params.keyword}
+          />
         );
       }
     }
@@ -27,7 +30,7 @@ class ProductDropsScreen extends Component {
       <Screen>
         <Text>Product Drops</Text>
         <Link onPress={() => this.props.navigation.getNavigator('root').push(router.getRoute('productDropFilters'))}>Filter</Link>
-        <Link onPress={() => this.props.navigator.push(router.getRoute('productDrops'))}>Product Detail</Link>
+        <Link onPress={() => this.props.navigator.push(router.getRoute('product'))}>Product</Link>
       </Screen>
     );
   }

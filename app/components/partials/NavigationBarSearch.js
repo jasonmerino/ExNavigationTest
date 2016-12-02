@@ -8,17 +8,26 @@ import {
 } from 'react-native';
 
 class NavigationBarSearch extends Component {
+
+  static defaultProps = {
+    showNavigationBarSearch: true,
+  }
+
   render() {
     return (
       <View style={componentStyles.container}>
         <View style={componentStyles.logo}>
           {this.props.renderLogo ? <Text style={componentStyles.logoText}>Logo</Text> : null}
         </View>
-        <TextInput
-          style={componentStyles.input}
-          placeholder="Search for stuff to buy"
-          defaultValue={this.props.keyword}
-        />
+        {
+          this.props.showNavigationBarSearch ?
+          <TextInput
+            style={componentStyles.input}
+            placeholder="Search for stuff to buy"
+            defaultValue={this.props.keyword}
+          /> :
+          null
+        }
       </View>
     );
   }

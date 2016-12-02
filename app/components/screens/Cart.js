@@ -9,6 +9,8 @@ import { NavigationStyles } from '@exponent/ex-navigation';
 import router from '../../router';
 import { navigationBarStylesDark } from '../../styles/navigationBarStyles';
 import Screen from '../partials/Screen';
+import Link from '../partials/Link';
+import { push } from '../../actions/navigationActions';
 
 class CartScreen extends Component {
 
@@ -26,6 +28,7 @@ class CartScreen extends Component {
     return (
       <Screen>
         <Text>Cart</Text>
+        <Link onPress={() => push('product')}>Product</Link>
       </Screen>
     );
   }
