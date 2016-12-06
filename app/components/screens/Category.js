@@ -29,7 +29,7 @@ class CategoryScreen extends Component {
         <Text>Category</Text>
         <Link
           onPress={() => {
-            navigatorPush(router.getRoute('productDrops', {
+            this.props.navigator.push(router.getRoute('productDrops', {
               showNavigationBarSearch: false,
             }));
           }}

@@ -48,6 +48,7 @@ class MainScreen extends Component {
         >
           <StackNavigation
             id="shop"
+            navigatorUID="shop"
             defaultRouteConfig={defaultRouteConfig}
             initialRoute={router.getRoute('shop')}
           />
@@ -55,6 +56,7 @@ class MainScreen extends Component {
 
         <TabNavigationItem
           id="experts"
+          navigatorUID="experts"
           title="Experts"
           renderTitle={(isSelected, title) => <TabBarTitle isSelected={isSelected}>{title}</TabBarTitle>}
           renderIcon={(isSelected) => <Icon name="ios-people" size={24} color={getColor(isSelected)} />}
@@ -68,6 +70,7 @@ class MainScreen extends Component {
 
         <TabNavigationItem
           id="cart"
+          navigatorUID="cart"
           title="Cart"
           renderTitle={(isSelected, title) => <TabBarTitle isSelected={isSelected}>{title}</TabBarTitle>}
           renderIcon={(isSelected) => <Icon name="ios-cart" size={24} color={getColor(isSelected)} />}
@@ -76,6 +79,7 @@ class MainScreen extends Component {
 
         <TabNavigationItem
           id="more"
+          navigatorUID="more"
           title="More"
           renderTitle={(isSelected, title) => <TabBarTitle isSelected={isSelected}>{title}</TabBarTitle>}
           renderIcon={(isSelected) => <Icon name="ios-more" size={24} color={getColor(isSelected)} />}

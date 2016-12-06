@@ -27,7 +27,8 @@ class ShopScreen extends Component {
     return (
       <Screen>
         <Text>Shop</Text>
-        <Link onPress={() => navigatorPush(router.getRoute('category'))}>Category</Link>
+        <Link onPress={() => this.props.navigator.push(router.getRoute('category'))}>Category</Link>
+        <Link onPress={() => this.props.navigator.showLocalAlert('Testing text', {})}>Alert</Link>
       </Screen>
     );
   }
