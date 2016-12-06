@@ -9,17 +9,17 @@ import router from '../../router';
 import Screen from '../partials/Screen';
 import Link from '../partials/Link';
 import NavigationBarButton from '../partials/NavigationBarButton';
-import { navigationBarStylesLight } from '../../styles/navigationBarStyles';
-import { pop } from '../../actions/navigationActions';
+import { navigationBarLight } from '../../styles/navigationBarStyles';
+import { navigatorPop } from '../../actions/navigatorActions';
 
 class ProductDropFiltersScreen extends Component {
 
   static route = {
     navigationBar: {
-      ...navigationBarStylesLight,
+      ...navigationBarLight,
       title: 'Filter Results',
       renderRight() {
-        return <NavigationBarButton onPress={pop}>Done</NavigationBarButton>;
+        return <NavigationBarButton onPress={navigatorPop}>Done</NavigationBarButton>;
       },
       renderLeft() {
         return <NavigationBarButton>Clear</NavigationBarButton>;

@@ -9,6 +9,7 @@ import router from '../../router';
 import Screen from '../partials/Screen';
 import Link from '../partials/Link';
 import NavigationBarSearch from '../partials/NavigationBarSearch';
+import { navigatorPush } from '../../actions/navigatorActions';
 
 class ProductDropsScreen extends Component {
 
@@ -29,8 +30,8 @@ class ProductDropsScreen extends Component {
     return (
       <Screen>
         <Text>Product Drops</Text>
-        <Link onPress={() => this.props.navigation.getNavigator('root').push(router.getRoute('productDropFilters'))}>Filter</Link>
-        <Link onPress={() => this.props.navigator.push(router.getRoute('product'))}>Product</Link>
+        <Link onPress={() => navigatorPush(router.getRoute('productDropFilters'), 'root')}>Filter</Link>
+        <Link onPress={() => navigatorPush(router.getRoute('product'))}>Product</Link>
       </Screen>
     );
   }

@@ -18,11 +18,12 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import router from '../../router';
 import colors from '../../styles/colors';
 import TabBarTitle from '../partials/TabBarTitle';
-import { navigationBarStylesDark } from '../../styles/navigationBarStyles';
+import { navigationBarDark } from '../../styles/navigationBarStyles';
+import { navigatorPush } from '../../actions/navigatorActions';
 
 const defaultRouteConfig = {
   navigationBar: {
-    ...navigationBarStylesDark,
+    ...navigationBarDark,
   }
 };
 
@@ -70,11 +71,7 @@ class MainScreen extends Component {
           title="Cart"
           renderTitle={(isSelected, title) => <TabBarTitle isSelected={isSelected}>{title}</TabBarTitle>}
           renderIcon={(isSelected) => <Icon name="ios-cart" size={24} color={getColor(isSelected)} />}
-          onPress={() => {
-            this.props.navigation.performAction(({ stacks }) => {
-              stacks('root').push(router.getRoute('cart'));
-            });
-          }}
+          onPress={() => navigatorPush(router.getRoute('cart'), 'root')}
         />
 
         <TabNavigationItem

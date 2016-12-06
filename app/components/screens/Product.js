@@ -7,13 +7,13 @@ import {
 } from 'react-native';
 import router from '../../router';
 import Screen from '../partials/Screen';
-import { navigationBarStylesDark } from '../../styles/navigationBarStyles';
+import { navigationBarDark } from '../../styles/navigationBarStyles';
 
 class ProductScreen extends Component {
 
   static route = {
     navigationBar: {
-      ...navigationBarStylesDark
+      ...navigationBarDark
     }
   }
 

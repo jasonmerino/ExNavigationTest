@@ -7,10 +7,10 @@ import {
 } from 'react-native';
 import { NavigationStyles } from '@exponent/ex-navigation';
 import router from '../../router';
-import { navigationBarStylesDark } from '../../styles/navigationBarStyles';
+import { navigationBarDark } from '../../styles/navigationBarStyles';
 import Screen from '../partials/Screen';
 import Link from '../partials/Link';
-import { push } from '../../actions/navigationActions';
+import { navigatorPush } from '../../actions/navigatorActions';
 
 class CartScreen extends Component {
 
@@ -19,7 +19,7 @@ class CartScreen extends Component {
       ...NavigationStyles.SlideVertical
     },
     navigationBar: {
-      ...navigationBarStylesDark,
+      ...navigationBarDark,
       title: 'Cart',
     },
   }
@@ -28,7 +28,7 @@ class CartScreen extends Component {
     return (
       <Screen>
         <Text>Cart</Text>
-        <Link onPress={() => push('product')}>Product</Link>
+        <Link onPress={() => navigatorPush(router.getRoute('product'))}>Product</Link>
       </Screen>
     );
   }

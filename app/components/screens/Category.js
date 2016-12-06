@@ -9,6 +9,7 @@ import router from '../../router';
 import Screen from '../partials/Screen';
 import Link from '../partials/Link';
 import NavigationBarSearch from '../partials/NavigationBarSearch';
+import { navigatorPush } from '../../actions/navigatorActions';
 
 class CategoryScreen extends Component {
 
@@ -28,7 +29,7 @@ class CategoryScreen extends Component {
         <Text>Category</Text>
         <Link
           onPress={() => {
-            this.props.navigator.push(router.getRoute('productDrops', {
+            navigatorPush(router.getRoute('productDrops', {
               showNavigationBarSearch: false,
             }));
           }}
@@ -37,7 +38,7 @@ class CategoryScreen extends Component {
         </Link>
         <Link
           onPress={() => {
-            this.props.navigator.push(router.getRoute('productDrops', {
+            navigatorPush(router.getRoute('productDrops', {
               keyword: 'keyword searched for' ,
             }));
           }}

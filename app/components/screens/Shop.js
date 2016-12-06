@@ -9,6 +9,7 @@ import router from '../../router';
 import Screen from '../partials/Screen';
 import Link from '../partials/Link';
 import NavigationBarSearch from '../partials/NavigationBarSearch';
+import { navigatorPush } from '../../actions/navigatorActions';
 
 class ShopScreen extends Component {
 
@@ -26,7 +27,7 @@ class ShopScreen extends Component {
     return (
       <Screen>
         <Text>Shop</Text>
-        <Link onPress={() => this.props.navigator.push(router.getRoute('category'))}>Category</Link>
+        <Link onPress={() => navigatorPush(router.getRoute('category'))}>Category</Link>
       </Screen>
     );
   }
