@@ -7,7 +7,7 @@ import {
   StatusBar,
 } from 'react-native';
 import router from '../../router';
-
+import KeyboardSpacer from 'react-native-keyboard-spacer';
 
 class ShopScreen extends Component {
 
@@ -23,6 +23,7 @@ class ShopScreen extends Component {
           barStyle={this.props.statusBarStyle}
         />
         {this.props.children}
+        <KeyboardSpacer />
       </View>
     );
   }

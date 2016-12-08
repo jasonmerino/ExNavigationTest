@@ -10,7 +10,6 @@ import router from '../../router';
 import { navigationBarDark } from '../../styles/navigationBarStyles';
 import Screen from '../partials/Screen';
 import Link from '../partials/Link';
-import { navigatorPush } from '../../actions/navigatorActions';
 
 class CartScreen extends Component {
 
@@ -28,16 +27,10 @@ class CartScreen extends Component {
     return (
       <Screen>
         <Text>Cart</Text>
-        <Link onPress={() => navigatorPush(router.getRoute('product'))}>Product</Link>
+        <Link onPress={() => this.props.navigator.push('product')}>Product</Link>
       </Screen>
     );
   }
 }
-
-const componentStyles = StyleSheet.create({
-  selectedTab: {
-    color: 'blue',
-  },
-});
 
 export default CartScreen;
